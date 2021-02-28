@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Clock from './Clock';
+import EntryForm from './EntryForm';
+import AddQuestion from "./AddQuestion";
+import CreateTest2 from "./CreateTest2";
+import CreateTest from "./CreateTest";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            {/*<header className="App-header">
+                <Clock/>
+            </header>*/}
+            <main className="App-main">
+                <CreateTest />
+                {/*<EntryForm />*/}
+                {/*<AddQuestion />*/}
+                {/*<CreateTest2 />*/}
+            </main>
+        </div>
+    );
 }
 
 export default App;
