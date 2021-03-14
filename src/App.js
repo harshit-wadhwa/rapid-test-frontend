@@ -1,21 +1,13 @@
 import './App.css';
-import Clock from './Clock';
-import EntryForm from './EntryForm';
-import AddQuestion from "./AddQuestion";
-import CreateTest2 from "./CreateTest2";
-import CreateTest from "./CreateTest";
+import React from "react";
+import decodeJwt from "jwt-decode";
+import Dashboard from "./Dashboard";
 
 function App() {
     return (
         <div className="App">
-            {/*<header className="App-header">
-                <Clock/>
-            </header>*/}
             <main className="App-main">
-                <CreateTest />
-                {/*<EntryForm />*/}
-                {/*<AddQuestion />*/}
-                {/*<CreateTest2 />*/}
+                <Dashboard/>
             </main>
         </div>
     );

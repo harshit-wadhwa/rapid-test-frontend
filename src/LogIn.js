@@ -37,6 +37,12 @@ class LogIn extends React.Component {
             .then(response => {
                 console.log(response);
                 if (response) {
+                    if (response.error) {
+                        this.setState({
+                            errors: response.error
+                        });
+                        return;
+                    }
                     localStorage.setItem('token', response.token);
                     this.setState({
                         name: '',
@@ -66,11 +72,13 @@ class LogIn extends React.Component {
                                 <input type="email" value={this.state.email}
                                        onChange={e => this.handleChange('email', e)}/>
                             </label>
+                            <p style={{color: 'red'}}>{this.state.errors && this.state.errors.email ? this.state.errors.email : ''}</p>
                             <label>
                                 Password:
                                 <input type="password" value={this.state.password}
                                        onChange={e => this.handleChange('password', e)}/>
                             </label>
+                            <p style={{color: 'red'}}>{this.state.errors && this.state.errors.password ? this.state.errors.password : ''}</p>
                             <br/>
                             <input className="btn btn-success" type="submit" value="Log In"/>
                         </div>
